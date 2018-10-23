@@ -14,7 +14,7 @@ export default class AlertBox extends Component {
 
 	showError(strMessage){
 		document.getElementById("alertMessage").innerHTML = strMessage;
-		document.getElementById("alertBox").style.display = "block";
+		document.getElementById("alertBox").style.display = "inline-block";
 	}
 	render() {
 		return(

@@ -8,7 +8,7 @@ export default class Loader extends Component {
 	}
 
 	showLoader(){
-		document.getElementById("loaderBox").style.display = "block";
+		document.getElementById("loaderBox").style.display = "inline-block";
 	}
 
 	hideLoader(){

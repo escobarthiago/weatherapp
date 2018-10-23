@@ -56,12 +56,12 @@ export default class CitySearchBox extends Component {
 			<div className="whitebox citysearchbox">
         <Loader ref={instance => { this.loader = instance; }}/> 
         <AlertBox ref={instance => { this.alertBox = instance; }}/> 
-        <div>
+        <div className="whitebox-content">
         	<input id="inputTypedCity" type="text" placeholder="City" className="inputCity" onKeyUp={this.handleTypeCity}/>
             <i className="material-icons searchIcon" onClick={this.searchTypedCity}>search</i>
+          <p>or</p>
+          <p>use my <span className="currentPositionLink" onClick={this.handleCurrentPositionClick} >current position</span></p>
         </div>
-        <p>or</p>
-        <p>use my <span className="currentPositionLink" onClick={this.handleCurrentPositionClick} >current position</span></p>
       </div>
 		);
 	}

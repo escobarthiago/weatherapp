@@ -67,6 +67,7 @@ export default class ResultWeather extends Component {
     if(numWeekDay>6){
       numWeekDay = numWeekDay-7;
     }
+    //return("XXXXXXXXXX");
     return(weekday[numWeekDay]);
   }
 
@@ -92,7 +93,7 @@ export default class ResultWeather extends Component {
         daySuffix = "th";
     }
     strFullDate += dayNumber+daySuffix+" ";
-    var year = date.getYear();
+    var year = date.getFullYear();
     strFullDate += year;
     return strFullDate;
   }
@@ -122,46 +123,48 @@ export default class ResultWeather extends Component {
       <div className="todayWeather-right">{this.convertTemperature(result.temperature)}<i className="wi wi-degrees"></i>{temperatureScaleLetter}</div>
       </div>
     );
-    var listNextDaysTemperatures = this.props.objWeather.results.map((result, i)=><div key={'weekresult_'+i} className="sevenDaysLineResults">
-          <div className={i!==0?(this.props.objWeather.results.length===6?"dayWeather next6days":"dayWeather next5days"):"dayWeather"}>
-            <p>{this.getWeekDay(i)}</p>
-            <i className={this.getIconById(result.weatherId)}></i>
-            <p>{this.convertTemperature(result.temperature)}<i className="wi wi-degrees"></i> {temperatureScaleLetter}</p>
-          </div>
-        </div>
+    var listNextDaysTemperatures = this.props.objWeather.results.map((result, i)=><div key={'weekresult_'+i} className={this.props.objWeather.results.length===6?"dayWeather next6days nextDay-"+(i+1):"dayWeather next5days nextDay-"+(i+1)}>
+        <p>{this.getWeekDay(i)}</p>
+        <i className={this.getIconById(result.weatherId)}></i>
+        <p>{this.convertTemperature(result.temperature)}<i className="wi wi-degrees"></i> {temperatureScaleLetter}</p>
+      </div>
     );
 		return(
 			<div className="whitebox">
-        <div className="firstLineResults">
-          <div className="backButton">
-            <i className="material-icons" onClick={this.handleBackButtonClick}>keyboard_backspace</i>
+        <div className="result-whitebox-content">
+          <div className="firstLineResults">
+            <div className="backButton">
+              <i className="material-icons" onClick={this.handleBackButtonClick}>keyboard_backspace</i>
+            </div>
+            <div className="cityName">{this.props.city}</div>
+            <div className="scaleChooser" onClick={this.handleScaleToogleClick}>
+              <div className="scaleIcon">
+                F<i className="wi wi-degrees"></i>
+              </div>
+              <i className="material-icons scaleToogle" id="scaleToogle">
+                {this.state.temperatureScale === "fahrenheit"?"toggle_on":"toggle_off"}
+              </i>
+              <div className="scaleIcon">
+                C<i className="wi wi-degrees"></i>
+              </div>
+            </div>
           </div>
-          <div className="cityName">{this.props.city}</div>
-          <div className="scaleChooser" onClick={this.handleScaleToogleClick}>
-            <div className="scaleIcon">
-              F<i className="wi wi-degrees"></i>
+          <div className="dateLineResults">{today}, {todayDate}<br/><span>{todayWeather}</span></div>
+          <div className="todayWeatherLineResults">
+            <div className="todayWeatherColumn">
+              {highlightTemperature}<i className="wi wi-degrees"></i>{temperatureScaleLetter}
             </div>
-            <i className="material-icons scaleToogle" id="scaleToogle">
-              {this.state.temperatureScale === "fahrenheit"?"toggle_on":"toggle_off"}
-            </i>
-            <div className="scaleIcon">
-              C<i className="wi wi-degrees"></i>
+            <div className="todayWeatherColumn weatherIcon">
+              <i className={todaysWeatherIcon}></i>
             </div>
+            <div className="todayWeatherColumn detailedTemperature">
+              {listTodayTemperatures}
+            </div>
+          </div>
+          <div className="nextDaysWeatherResult">
+            {listNextDaysTemperatures}
           </div>
         </div>
-        <div className="dateLineResults">{today}, {todayDate}<br/><span>{todayWeather}</span></div>
-        <div className="todayWeatherLineResults">
-          <div className="todayWeatherColumn">
-            {highlightTemperature}<i className="wi wi-degrees"></i>{temperatureScaleLetter}
-          </div>
-          <div className="todayWeatherColumn">
-            <i className={todaysWeatherIcon}></i>
-          </div>
-          <div className="todayWeatherColumn detailedTemperature">
-            {listTodayTemperatures}
-          </div>
-        </div>
-        {listNextDaysTemperatures}
       </div>
 		);
 	}

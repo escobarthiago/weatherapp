@@ -9,20 +9,19 @@ body {
  	background-image: -webkit-linear-gradient(top left, #fd746c, #ff9068);
 }
 .whitebox{
-	width: 1200px;
-	height: 600px;
+	width: 80%;
 	margin-left: 10%;
-	margin-top: 10%;
+	margin-top: 7%;
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-top: -300px;
-	margin-left: -600px;
 	background-color: #FFF;
 	color: #4a6777;
 	-webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
 	-moz-box-shadow:    0px 0px 10px 0px rgba(50, 50, 50, 0.75);
 	box-shadow:         0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+	display: inline-block;
+}
+.whitebox-content{
+	margin: 200px;
 }
 /***********************************************************************************/
 /*                                                                                 */
@@ -33,13 +32,12 @@ body {
 	text-align: center;
 }
 .inputCity{
-	margin-top: 200px;
 	text-align: center;
 	border-bottom: 2px solid #4a6777;
 	border-top: none;
     border-right: none;
     border-left: none;
-    width: 50%;
+    width: 40%;
     font-size: 44px;
     color: #a9a9a9;
     font-weight: 600;
@@ -56,16 +54,18 @@ body {
 	cursor: pointer;
 	border-bottom: 1px dashed #4a6777;
 }
-
 /***********************************************************************************/
 /*                                                                                 */
 /*                            Weather Report Screen                                */
 /*                                                                                 */
 /***********************************************************************************/
-
-.firstLineResults{
+.result-whitebox-content{
 	margin: 50px;
-	height: 50px;
+}
+.firstLineResults{
+	width: 100%;
+	display: inline-block;
+	margin-bottom: 50px;
 }
 .backButton{
 	cursor: pointer;
@@ -83,6 +83,7 @@ body {
 }
 .scaleChooser{
 	float: right;
+	margin-top: 10px;
 }
 .scaleIcon{
 	float: right;
@@ -95,7 +96,7 @@ body {
 	cursor: pointer;
 }
 .dateLineResults{
-	margin: -20px 50px 20px 50px;
+	margin-bottom: 20px;
 	font-size: 38px;
 	font-weight: 300;
 }
@@ -103,18 +104,20 @@ body {
 	font-size: 28px;
 }
 .todayWeatherLineResults{
-	margin: 20px 50px;
+	margin-bottom: 20px;
 	font-size: 120px;
 	color: #e69580;
-	height: 150px;
+	display: inline-block;
+	width: 100%;
 }
 .todayWeatherColumn{
-	margin-right: 50px;
+	margin-right: 80px;
 	float: left;
 }
 .detailedTemperature{
 	font-size: 20px;
-	width: 200px;
+	width: 170px;
+	margin-right: 0;
 }
 .todayWeather-left{
 	width: 70%;
@@ -125,27 +128,59 @@ body {
 	width: 29%;
 	float:right;
 	margin-bottom: 10px;
+	text-align: right;
 }
 .sevenDaysLineResults{
 	margin: 0px 50px;
 }
 .dayWeather{
 	text-align: center;
-	width: 65px;
 	font-size: 14px;
 	float: left;
 }
-.next5days{
-	margin-left: 190px;	
+.next5days.nextDay-2{
+	position: absolute;
+	left: 26%;
 }
-.next6days{
-	margin-left: 140px;	
+.next5days.nextDay-3{
+	position: absolute;
+	left: 47%;
+}
+.next5days.nextDay-4{
+	position: absolute;
+	left: 68%;
+}
+.next5days.nextDay-5 {
+	float: right;
+}
+.next6days.nextDay-2{
+	position: absolute;
+	left: 22%;
+}
+.next6days.nextDay-3{
+	position: absolute;
+	left: 39%;
+}
+.next6days.nextDay-4{
+	position: absolute;
+	left: 56%;
+}
+.next6days.nextDay-5 {
+	position: absolute;
+	left: 73%;
+}
+.next6days.nextDay-6 {
+	float: right;
 }
 .dayWeather i{
 	font-size: 40px;
 }
 .dayWeather p i{
 	font-size: 14px;
+}
+.nextDaysWeatherResult{
+	display: inline-block;
+	width: 100%;
 }
 /***********************************************************************************/
 /*                                                                                 */
@@ -154,15 +189,12 @@ body {
 /***********************************************************************************/
 
 .alertBox{
-	width: 600px;
-	height: 150px;
-	margin-left: 10%;
-	margin-top: 10%;
+	width: 40%;
+	margin-left: -20%;
+	margin-top: -5%;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	margin-top: -100px;
-	margin-left: -300px;
 	background-color: #FFF;
 	color: #4a6777;
 	-webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
@@ -180,7 +212,7 @@ body {
 }
 
 .alertMessage{
-	margin: 60px;
+	margin: 12%;
 	font-size: 20px;
 }
 /***********************************************************************************/
@@ -190,25 +222,326 @@ body {
 /***********************************************************************************/
 
 .loaderBox{
-	width: 600px;
-	height: 150px;
-	margin-left: 10%;
-	margin-top: 10%;
+	width: 40%;
+	margin-left: -20%;
+	margin-top: -5%;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	margin-top: -100px;
-	margin-left: -300px;
 	background-color: #FFF;
 	color: #4a6777;
 	-webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
-	-moz-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
-	box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px 0px 10px 0px rgba(50, 50, 50, 0.75);
 	text-align: center;
 	display: none;
 
 }
 .loadMessage{
-	margin: 60px;
+	margin: 12%;
 	font-size: 20px;
+}
+
+
+/***********************************************************************************/
+/*                                                                                 */
+/*                                 Responsive                                      */
+/*                                                                                 */
+/***********************************************************************************/
+
+
+@media only screen and (max-width: 1006px) {
+	.whitebox{
+		width: 85%;
+		margin-left: 7.5%;
+		margin-top: 5%;
+	}
+	.whitebox-content{
+		margin: 150px;
+	}
+	.alertBox,
+	.loaderBox{
+		width: 50%;
+		margin-left: -25%;
+		margin-top: -7%;
+	}
+	.alertMessage,
+	.loadMessage{
+		font-size: 18px;
+	}
+	.inputCity {
+    	font-size: 36px;
+	}
+	.backButton i{
+		font-size: 44px;
+	}
+	.cityName{
+		font-size: 32px;
+		margin-left: 20px;
+	}
+	.dateLineResults {
+    	font-size: 34px;
+	}
+	.todayWeatherColumn{
+		margin-right: 30px;
+	}
+	.detailedTemperature{
+		margin-right: 0;
+	}
+	.todayWeatherLineResults{
+		font-size: 90px;
+	}
+	.detailedTemperature {
+    	font-size: 16px;
+		width: 150px;
+	}
+}
+@media only screen and (max-width: 922px) {
+	.next5days.nextDay-2,
+	.next6days.nextDay-2 {
+		left: 46%;
+	}
+	.next5days.nextDay-3,
+	.next6days.nextDay-3 {
+		float: right;
+		position: relative;
+		left: 0%;
+		margin-bottom: 150px;
+	}
+	.next5days.nextDay-4,
+	.next6days.nextDay-4 {
+		margin-top: 200px;
+		left: 0%;
+		margin-left: 50px
+	}
+	.next5days.nextDay-5,
+	.next6days.nextDay-5 {
+		margin-top: 200px;
+		left: 46%;
+		position: absolute;
+	}
+	.next6days.nextDay-6 {
+		margin-top: 200px;
+		margin-right: -100px
+	}
+	.dayWeather {
+    	font-size: 22px;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.inputCity {
+    	font-size: 32px;
+    	width: 50%;
+	}
+	.whitebox-content{
+		margin: 100px;
+	}
+	.whitebox{
+		width: 90%;
+		margin-left: 3%;
+		margin-top: 3%;
+	}
+	.alertBox,
+	.loaderBox{
+		width: 60%;
+		margin-left: -30%;
+		margin-top: -8%;
+	}
+	.alertMessage,
+	.loadMessage{
+		font-size: 16px;
+	}
+	.backButton i{
+		font-size: 40px;
+	}
+	.cityName{
+		font-size: 28px;
+		margin-left: 15px;
+	}
+	.firstLineResults {
+    	margin-bottom: 30px;
+	}
+	.dateLineResults {
+    	font-size: 32px;
+	}
+	.todayWeatherColumn{
+		margin-right: 15px;
+	}
+	.detailedTemperature{
+		margin-right: 0;
+	}
+	.todayWeatherLineResults{
+		font-size: 70px;
+	}
+	.detailedTemperature{
+		float: right;
+	}
+	.dayWeather {
+    	font-size: 14px;
+	}
+	.next5days.nextDay-3{
+		margin-bottom: 110px;
+	}
+	.next5days.nextDay-4,
+	.next5days.nextDay-5,
+	.next6days.nextDay-4,
+	.next6days.nextDay-5,
+	.next6days.nextDay-6 {
+		margin-top: 140px;
+	}
+	.next6days.nextDay-2 {
+ 	   left: 46%;
+	}
+	.next6days.nextDay-6 {
+        margin-right: -65px;
+	}
+}
+@media only screen and (max-width: 600px) {
+	.result-whitebox-content{
+		margin: 40px;
+	}
+	.inputCity {
+    	font-size: 28px;
+    	width: 70%;
+	}
+	.searchIcon{
+		font-size: 32px;
+		margin-left: -32px;
+	}
+	.alertBox,
+	.loaderBox{
+		width: 80%;
+		margin-left: -40%;
+		margin-top: -11%;
+	}
+	.alertMessage,
+	.loadMessage{
+		font-size: 14px;
+	}
+	.backButton i{
+		font-size: 34px;
+	}
+	.cityName{
+		font-size: 22px;
+		margin-left: 10px;
+	}
+	.scaleChooser{
+		margin-top: 5px;
+	}
+	.firstLineResults {
+    	margin-bottom: 20px;
+	}
+	.dateLineResults {
+    	font-size: 22px
+	}
+	.todayWeatherLineResults{
+		font-size: 50px;
+	}
+	.detailedTemperature {
+	    font-size: 14px;
+    	width: 100px;
+	}
+	.next5days.nextDay-4,
+	.next6days.nextDay-4 {
+	    margin-left: 40px;
+	}
+}
+@media only screen and (max-width: 480px) {
+	.next5days.nextDay-2,
+	.next5days.nextDay-5,
+	.next6days.nextDay-2,
+	.next6days.nextDay-5 {
+	    left: 44%;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.result-whitebox-content{
+		margin: 20px;
+	}
+	.whitebox{
+		width: 95%;
+		margin-left: 0%;
+		margin-top: 1%;
+	}
+	.whitebox-content{
+		margin: 30px;
+	}
+	.inputCity {
+    	font-size: 28px;
+    	width: 70%;
+	}
+	.citysearchbox{
+		font-size: 14px;
+	}
+	.searchIcon{
+		font-size: 25px;
+		margin-left: -25px;
+	}
+	.alertBox,
+	.loaderBox{
+		width: 90%;
+		margin-left: -45%;
+		margin-top: -15%;
+	}
+	.alertMessage,
+	.loadMessage{
+		font-size: 10px;
+		margin: 15%;
+	}
+	.backButton i{
+		font-size: 30px;
+	}
+	.cityName{
+		font-size: 16px;
+		margin-left: 2px;
+	}
+	.firstLineResults {
+    	margin-bottom: 10px;
+	}
+	.dateLineResults {
+    	font-size: 18px
+	}
+	.todayWeatherLineResults{
+		font-size: 70px;
+	}
+	.todayWeatherColumn{
+		margin-right: 0;
+	}
+	.detailedTemperature{
+		margin-right: 0;
+		margin-top: 10px;
+		width: 100%;
+		font-size: 24px;
+	}
+	.weatherIcon{
+		margin: 0;
+		float: right;
+	}
+	.next5days.nextDay-4,
+	.next6days.nextDay-4 {
+    	margin-left: 20px;
+	}
+	.next5days.nextDay-2,
+	.next5days.nextDay-5,
+	.next6days.nextDay-2,
+	.next6days.nextDay-5 {
+    	left: 41%;
+	}
+	.dayWeather {
+    	font-size: 12px;
+	}
+	.scaleIcon {
+        font-size: 16px;
+	}
+	.scaleToogle {
+    	font-size: 46px;
+	}
+	.next5days.nextDay-3 {
+    	margin-bottom: 120px;
+	}
+}
+@media only screen and (max-width: 320px) {
+	.todayWeatherLineResults {
+	    font-size: 60px;
+	}
 }

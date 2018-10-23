@@ -52,7 +52,6 @@ class App extends Component {
   }
 
   setWeatherData(strCity, dataWeather){
-    console.log(dataWeather);
     this.setState({city: strCity, weather: dataWeather});
   }
 
@@ -64,7 +63,6 @@ class App extends Component {
       var dayWeather;
       if(!firstDayFinded){
         if(hourData === "12:00:00" || hourData === "18:00:00" || hourData === "00:00:00" ){
-          console.log("colocando o primeiro valor: "+hourData+" - "+originalData[wData].main.temp);
           firstDayFinded = true;
           dayWeather = {
             temperature: originalData[wData].main.temp,
